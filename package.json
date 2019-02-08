@@ -1,0 +1,33 @@
+{
+  "name": "test",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.6.3",
+    "react-native": "0.58.3",
+    "react-native-drawer": "^2.5.1",
+    "react-native-gesture-handler": "^1.0.15",
+    "react-native-image-picker": "^0.28.0",
+    "react-native-imagepicker": "^2.0.0",
+    "react-native-paper": "^2.10.1",
+    "react-native-radio-buttons-group": "^1.0.7",
+    "react-native-simple-radio-button": "^2.7.3",
+    "react-native-simple-time-picker": "^0.2.0",
+    "react-navigation": "^3.1.5",
+    "react-navigation-material-bottom-tabs": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "24.0.0",
+    "jest": "24.0.0",
+    "metro-react-native-babel-preset": "0.51.1",
+    "react-test-renderer": "16.6.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
