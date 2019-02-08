@@ -43,6 +43,8 @@ export default class ButtonBasics extends Component {
       onChangeText={(Name) => this.setState({userName:Name})} 
       value={this.state.userName} 
       />
+
+      
       <TextInput
       style={styles.input}
       placeholder="Password"
