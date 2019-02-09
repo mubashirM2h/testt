@@ -14,6 +14,7 @@ import forme from './formm';
 import HomeScreen from './HomeScreen';
 import SettingsScreen from './SettingScreen';
 import signed from './signedUp';
+import dates from './date';
 
 const root = createStackNavigator({
   Homeh: {screen: Home},
@@ -36,6 +37,9 @@ const AppNavigator = createDrawerNavigator({
   },
   SignUp :{
     screen: SettingsScreen
+  },
+  Date:{
+    screen: dates
   },
   Exit:{
     screen: HomeScreen

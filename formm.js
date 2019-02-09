@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
-import {View,Text,StyleSheet,TextInput} from 'react-native';
+import {View,Text,StyleSheet,TextInput, TouchableOpacity} from 'react-native';
 import RadioForm, {RadioButton, RadioButtonInput, RadioButtonLabel} from 'react-native-simple-radio-button';
+import DatePicker from 'react-native-datepicker'
+import TimePicker from 'react-native-simple-time-picker';
+import DateTimePicker from 'react-native-modal-datetime-picker';
 
 var radio_props = [
     {label: 'MALE', value: 0 },
@@ -13,11 +16,31 @@ constructor(props){
     this.state={
         Name:"",
         Address:"",
-        Phone:""
+        Phone:"",
+        date:"2016-05-15",
+        selectedHours: 0,
+        //initial Hours
+        selectedMinutes: 0,
+        //initial Minutes
 
     }
 }
+
+state = {
+    isDateTimePickerVisible: false,
+  };
+
+_showDateTimePicker = () => this.setState({ isDateTimePickerVisible: true });
+
+_hideDateTimePicker = () => this.setState({ isDateTimePickerVisible: false });
+
+_handleDatePicked = (date) => {
+  console.log('A date has been picked: ', date);
+  this._hideDateTimePicker();
+};
 render(){
+    const { selectedHours, selectedMinutes } = this.state;
+
     return(
         <View style={styles.container}>
          <TextInput
@@ -37,6 +60,7 @@ render(){
          <TextInput style={styles.input}
         placeholder="Qualification"/>
           <RadioForm
+           style={styles.input}
           radio_props={radio_props}
           initial={0}
           onPress={(value) => {this.setState({value:value})}}
@@ -45,6 +69,64 @@ render(){
           labelHorizontal={true}
           buttonColor={'#b30086'}
           animation={true}
+        />
+        <Text style={{color:'#b30086'}}>FROM:</Text><DatePicker
+         style={styles.input}
+        date={this.state.date}
+        mode="date"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate="2016-05-01"
+        maxDate="2019-06-01"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+          // ... You can check the source to find the other keys.
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
+      />
+      <Text style={{color:'#b30086'}}>TO:</Text><DatePicker
+        style={styles.input}
+        date={this.state.date}
+        mode="date"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate="2016-05-01"
+        maxDate="2016-06-01"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+          // ... You can check the source to find the other keys.
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
+      />
+   
+        <TouchableOpacity onPress={this._showDateTimePicker} style={styles.input}>
+          <Text>Time Picker</Text>
+         </TouchableOpacity>
+        <DateTimePicker
+          isVisible={this.state.isDateTimePickerVisible}
+          onConfirm={this._handleDatePicked}
+          onCancel={this._hideDateTimePicker}
+          mode="time"
         />
         </View>
         
@@ -60,10 +142,10 @@ const styles = StyleSheet.create({
   
     },
     input: {
-      
+      height:45,
       width:300,
       borderRadius:25,
-      backgroundColor:"#b30086",
+      backgroundColor:"white",
       color: 'white',
       paddingHorizontal: 16,
       marginBottom: 10,
@@ -72,5 +154,6 @@ const styles = StyleSheet.create({
       fontSize:16,
       
     
-    }
+    },
+    
 });
