@@ -1,13 +1,47 @@
 import React, { Component } from 'react';
-import { Alert, StyleSheet, View, Text, TextInput,TouchableOpacity,AsyncStorage } from 'react-native';
+import { Alert,Animated, StyleSheet, View, Text, TextInput,TouchableOpacity,AsyncStorage } from 'react-native';
+
+const data=[];
+
+
+class FadeInView extends React.Component {
+  state = {
+    fadeAnim: new Animated.Value(0),  // Initial value for opacity: 0
+  }
+
+  componentDidMount() {
+    Animated.timing(                  // Animate over time
+      this.state.fadeAnim,            // The animated value to drive
+      {
+        toValue: 1,                   // Animate to opacity: 1 (opaque)
+        duration: 1000,              // Make it take a while
+      }
+    ).start();                        // Starts the animation
+  }
+
+  render() {
+    let { fadeAnim } = this.state;
+
+    return (
+      <Animated.View                 // Special animatable View
+        style={{
+          ...this.props.style,
+          opacity: fadeAnim,         // Bind opacity to animated value
+        }}
+      >
+        {this.props.children}
+      </Animated.View>
+    );
+  }
+}
 
 
 export default class ButtonBasics extends Component {
   constructor(props){
     super(props);
     
-    this.state = {userName : "Name", 
-    password: "Name",
+    this.state = {userName : '', 
+    password: '',
     pickedImage:'https://facebook.github.io/react-native/docs/assets/favicon.png'
   };
   
@@ -16,17 +50,18 @@ export default class ButtonBasics extends Component {
     header: null
   };
   _onPressButton= async ()=> {  
-    if(this.state.userName==="Name"&&this.state.password==="Name"){
-       this.props.navigation.navigate('onen')
-    }else if(this.state.userName==="" && this.state.password===""){
-      Alert.alert("Please Enter the username and password");
-    }else{
-      Alert.alert("Please enter correct user name and pasword");
-    }
+    // if(this.state.userName==="Name"&&this.state.password==="Name"){
+       
+    // }else if(this.state.userName==="" && this.state.password===""){
+    //   Alert.alert("Please Enter the username and password");
+    // }else{
+    //   Alert.alert("Please enter correct user name and pasword");
+    // }
     try{
-      await AsyncStorage.setItem('username', this.state.userName);
+      data.push(this.state.userName.toString());
+      await AsyncStorage.setItem('username', JSON.stringify(data));
       await AsyncStorage.setItem('password',this.state.password);
-
+      this.props.navigation.navigate('onen')
     }catch(error){
       
     }
@@ -36,7 +71,7 @@ export default class ButtonBasics extends Component {
     return (
       
       <View style={styles.container}>
-      
+       <FadeInView style={styles.container}>
       <TextInput
       style={styles.input}
       placeholder="User Name"
@@ -56,7 +91,7 @@ export default class ButtonBasics extends Component {
       <TouchableOpacity style={styles.buttonContainer} onPress={()=>this._onPressButton()}>
       <Text style={styles.buttonText}>LOG IN</Text>
       </TouchableOpacity>
-  
+      </FadeInView>
       </View>
     );
   }

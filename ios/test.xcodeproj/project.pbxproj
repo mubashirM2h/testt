@@ -59,6 +59,8 @@
 		20CB7459499C41FF8CCC6A20 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5895C32013347F7B2678D56 /* Octicons.ttf */; };
 		EDD0D3D308A44238BF948298 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DC9AF3AFC134CEBACC4A60D /* SimpleLineIcons.ttf */; };
 		C2D08334B77B401895A59011 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 613434B87E0D4BDAA7714331 /* Zocial.ttf */; };
+		4F21211FC22F43A1A864673E /* libRNNavybitsDateTimePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B414575CB29B4C64976546BD /* libRNNavybitsDateTimePicker.a */; };
+		A3EC07F3CDD540F5915F6B29 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AB4BE8DCB44C423195346175 /* libRNFetchBlob.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -390,6 +392,10 @@
 		B5895C32013347F7B2678D56 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9DC9AF3AFC134CEBACC4A60D /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		613434B87E0D4BDAA7714331 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		74C785C852654E6EB5204646 /* RNNavybitsDateTimePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNNavybitsDateTimePicker.xcodeproj"; path = "../node_modules/react-native-navybits-date-time-picker/ios/RNNavybitsDateTimePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		B414575CB29B4C64976546BD /* libRNNavybitsDateTimePicker.a */ = {isa = PBXFileReference; name = "libRNNavybitsDateTimePicker.a"; path = "libRNNavybitsDateTimePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		3794489FC8CC4E2182D82BD5 /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/rn-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		AB4BE8DCB44C423195346175 /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -422,6 +428,8 @@
 				F4D7AF282E894C258DA81313 /* libRNImagePicker.a in Frameworks */,
 				1B5E41CDE49F44348C5A0AFE /* libRNExitApp.a in Frameworks */,
 				24B4E193E2B84506A0FE54C0 /* libRNVectorIcons.a in Frameworks */,
+				4F21211FC22F43A1A864673E /* libRNNavybitsDateTimePicker.a in Frameworks */,
+				A3EC07F3CDD540F5915F6B29 /* libRNFetchBlob.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +624,8 @@
 				B9B7DFFB097446CFB2F8A94E /* RNImagePicker.xcodeproj */,
 				C402492268A24CEA9AD59CFD /* RNExitApp.xcodeproj */,
 				958057B7AD1E40C0B8381CE6 /* RNVectorIcons.xcodeproj */,
+				74C785C852654E6EB5204646 /* RNNavybitsDateTimePicker.xcodeproj */,
+				3794489FC8CC4E2182D82BD5 /* RNFetchBlob.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1287,12 +1297,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Debug;
@@ -1319,12 +1333,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Release;
@@ -1350,6 +1368,8 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Debug;
@@ -1374,6 +1394,8 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Release;
@@ -1408,12 +1430,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Debug;
@@ -1448,12 +1474,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Release;
@@ -1487,12 +1517,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Debug;
@@ -1526,12 +1560,16 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
+					"$(SRCROOT)/../node_modules/react-native-navybits-date-time-picker/ios",
+					"$(SRCROOT)/../node_modules/rn-fetch-blob/ios/**",
 				);
 			};
 			name = Release;

@@ -15,6 +15,8 @@ import HomeScreen from './HomeScreen';
 import SettingsScreen from './SettingScreen';
 import signed from './signedUp';
 import dates from './date';
+import Dimages from './Dimage';
+import conrend from './conditional';
 
 const root = createStackNavigator({
   Homeh: {screen: Home},
@@ -29,7 +31,8 @@ const root = createStackNavigator({
   botto:{screen: bott},
   formee: {screen: forme},
   signedu:{screen: signed},
-  
+  Di:{screen:Dimages},
+  cr:{screen:conrend},
 });
 const AppNavigator = createDrawerNavigator({
   LogIn :{

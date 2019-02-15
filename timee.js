@@ -44,7 +44,7 @@ class StopWatch extends Component {
                 count = (Number(this.state.counter) + 1).toString();
                 num = '00';
             }
-            if( Number(this.state.count) == 59 ) {
+            if( Number() == 59 ) {
                 hour = (Number(this.state.hours) + 1).toString();
                 count ='00';
                 num = '00';

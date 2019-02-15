@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {  FlatList, StyleSheet, Text, View} from 'react-native';
+import {  FlatList, StyleSheet, Text,NetInfo, View} from 'react-native';
+
 
 
 export default class FlatListBasics extends Component {
@@ -11,6 +12,7 @@ export default class FlatListBasics extends Component {
           data:[]
     };
 }
+
 componentWillMount(){
     fetch('https://jsonplaceholder.typicode.com/comments')
     .then(res=>res.json())
@@ -18,10 +20,32 @@ componentWillMount(){
         console.log('response',res);        
         this.setState({          
           data: res                         
-        });        
+        });  
+        
+       
+        
     }
     );  
 }
+componentDidMount(){
+    NetInfo.isConnected.fetch().then(isConnected => {
+        console.log('First, is ' + (isConnected ? 'online' : 'offline'));
+      });
+      function handleFirstConnectivityChange(isConnected) {
+        console.log('Then, is ' + (isConnected ? 'online' : 'offline'));
+        NetInfo.isConnected.removeEventListener(
+          'connectionChange',
+          handleFirstConnectivityChange
+        );
+      }
+      NetInfo.isConnected.addEventListener(
+        'connectionChange',
+        handleFirstConnectivityChange
+      );
+   
+}
+
+
 render(){
     return(
         <View style={styles.container}>
@@ -41,10 +65,12 @@ render(){
               </View>           
           }
         />
+        
         </View>
       </View>
 )};
 }
+
 const styles = StyleSheet.create({
     container: {
      flex: 1,
